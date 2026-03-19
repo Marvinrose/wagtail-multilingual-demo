@@ -6,7 +6,11 @@ from wagtail.search import index
 
 
 class HomePage(Page):
-    pass
+    body = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("body"),
+    ]
 
 
 class BlogIndexPage(Page):
